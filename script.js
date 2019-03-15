@@ -1,4 +1,4 @@
-     //CODE STRUCTURE
+   //CODE STRUCTURE
 
     //STATMENTS
     //    alert('hello world!') ;
@@ -686,15 +686,15 @@ for (;;){
 
 
 // break <labelName>
-outer:for (let i=0; i<3 ;i++){
-  for (let j=0; j<3; j++ ){
-     let input =prompt(`value at coords (${i},${j})`,'');
-     //if an empty string or canceled then break out of the loops
-     if (!input) break outer; //(*)
-     //do something with value
-  }
-}
-console.log('Done!');
+// outer:for (let i=0; i<3 ;i++){
+//    for (let j=0; j<3; j++ ){
+//       let input =prompt(`value at coords (${i},${j})`,'');
+//       //if an empty string or canceled then break out of the loops
+//       if (!input) break outer; //(*)
+//       //do something with value
+//    }
+// }
+// console.log('Done!');
 
 
 /*
@@ -719,25 +719,25 @@ console.log('Done!');
 // 2.) Which values does the while loop show?
 // The prefix form ++i:
 
-let i = 0;
-while (++i < 5) alert( i );
+// let i = 0;
+// while (++i < 5) alert( i );
 //Above output 1 2 3 4
 
 // The postfix form i++
 
-let i = 0;
-while (i++ < 5) alert( i );
+// let i = 0;
+// while (i++ < 5) alert( i );
 
 //Above output 1 2 3 4 5
 
 // 3.)Which values get shown by the "for" loop?
 //The postfix form:
 
-for (let i = 0; i < 5; i++) alert( i );
+// for (let i = 0; i < 5; i++) alert( i );
 
 //The prefix form:
 
-for (let i = 0; i < 5; ++i) alert( i );
+// for (let i = 0; i < 5; ++i) alert( i );
 
 
 //the above both answer is 0 1 2 3 4
@@ -746,26 +746,354 @@ for (let i = 0; i < 5; ++i) alert( i );
 
 //Use the for loop to output even numbers from 2 to 10.
 
-for (let i=2; i<=10;i++){
-  if( i%2 == 0){
-     console.log(i);
-  }
-}
+// for (let i=2; i<=10;i++){
+//    if( i%2 == 0){
+//       console.log(i);
+//    }
+// } //output: 2 4 6 8 10
 
 
 // 5.) Replace "for" with "while"
 //Rewrite the code changing the for loop to while without altering its behavior (the output should stay same).
 
-for (let i = 0; i < 3; i++) {
- alert( `number ${i}!` );
+// for (let i = 0; i < 3; i++) {
+//   alert( `number ${i}!` );
+// }
+
+// let i=0;
+// while (i<3){
+//    console.log(`number ${i}!`);
+//    i++;
+// }
+
+
+// 6.) Repeat until the input is correct 
+
+// let num;
+// do{
+//    num =prompt ("Enter a number greter than 100?",0);
+// }while(num <=100 && num);
+
+
+// 7.) Output prime numbers n=10 result 2 3 5 7 
+//using label
+// let n=10;
+// nextPrime:
+// for (let i=2; i<=n; i++){
+//    for (let j=2;j<i;j++){ //look for a divisior
+//       if (i%j ==0) continue nextPrime; //not a prime,go net i
+//    }
+//    console.log(i); // a prime
+  
+// }
+
+
+/*
+Switch statement:statement can replace multiple if checks
+syntax: switch has one or more case blocks and an optional default
+switch(x){
+  case 'value1': //if (x === 'value1')
+  ...
+  [break]
+  case 'value2': //if (x === 'value2')
+  ...
+  [break]
+  default:
+  ...
+  [break]
 }
 
-let i=0;
-while (i<3){
-  console.log(`number ${i}!`);
-  i++;
-}
+*/
+
+
+// let arg =prompt ("Enter a value?");
+// switch(arg){
+//    case '0':
+//    case '1':
+//    console.log('one or zero');
+//    break;
+//    case '2':
+//    console.log('Two');
+//    break;
+//    case 3:
+//    console.log('Never executes');
+//    break;
+//    default:
+//    console.log('An known value');
+// }
 
 
 
+//Task Rewrite the switch into an if
+// switch (browser) {
+//   case 'Edge':
+//     alert( "You've got the Edge!" );
+//     break;
 
+//   case 'Chrome':
+//   case 'Firefox':
+//   case 'Safari':
+//   case 'Opera':
+//     alert( 'Okay we support these browsers too' );
+//     break;
+
+//   default:
+//     alert( 'We hope that this page looks ok!' );
+// } 
+
+
+// if (browser == 'Edge'){
+//    console.log('you got the Edge!');
+// }else if (browser == 'Chrome' ||
+//          browser == 'Firefox' ||
+//          browser == 'Safari' ||
+//          browser == 'Opera' ) {
+//             console.log('Okay we support these browsers too');
+//          }else{
+//             console.log('We hope that this page looks ok!' );
+           
+//          }
+
+  //Rewrite "if" into "switch"
+
+//    let a = +prompt('a?', '');
+
+// if (a == 0) {
+//   alert( 0 );
+// }
+// if (a == 1) {
+//   alert( 1 );
+// }
+
+// if (a == 2 || a == 3) {
+//   alert( '2,3' );
+// }
+
+// let a = +prompt('a?','');
+// switch (a) {
+//    case 0:
+//       console.log(0);
+//       break;
+//       case 1:
+//       console.log(1);
+//       break;
+//       case 2:
+//       case 3:
+//       console.log('2,3');
+//       break
+//    default:
+//       break;
+// }
+
+
+/*
+Functions: are the main "building blocks" of the program
+They allow the code to be called many times without
+repetition
+*/
+
+
+//Function declaration
+// function showMessage(){
+//    console.log('hello everyone!');
+// } //Our new function can be called by its name:showMessage
+
+//For instance:
+
+// function showMessage(){
+//    console.log('hello everyone!');
+// }
+// showMessage();
+// showMessage();
+
+//Local Variables:
+//A variable can be declared inside a fuction is only visible
+//inside that function
+// function showMessage(){
+//    let message = "Hello, I am JavaScript!"; //Local varaiable
+//    console.log(message);
+// } 
+// showMessage(); //Hello, I am JavaScript!
+// console.log(message); //Error message
+
+
+//Outer Variables:
+//A function can access an outer variable as well
+// let UserName = 'vamsi';
+// function showMessage(){
+//    let message = 'Hello,' +UserName;
+//    console.log(message);
+// }
+// showMessage(); // Hello, vamsi
+
+
+//function has full access to the outer variable.
+//It acn modify it as well
+// let userName = 'narendra';
+// function showMessage(){
+//    userName = "krousri"; // changed the outer variable
+//    let message = 'Hello,' +userName; //krousri
+//    console.log(message);
+// }
+// console.log(userName); //narendra
+// showMessage();
+// console.log(userName); //krousri
+
+/* Global variable:
+variables declared outside of any function,such as 
+the outer userName in the code are called global
+Global variable are visible from any function
+*/
+
+// let userName = 'karimulla';
+// function showMessage() {
+//    let userName = "shaik"; //declare a local var
+//    let message = 'Hello,' +userName; //shaik
+//    console.log(message);
+// }
+//function will create and use its own userName
+// showMessage();
+// console.log(userName);
+
+/* 
+Parameters:
+we can pass arbitary data to functions using params
+When the function is called in lines (*) and (**),
+the given values are copied to local variables from and text.
+ Then the function uses them.
+*/
+
+// function showMessage(from,text) {
+//    console.log(from + ': '+text);
+// }
+// showMessage('shaik','karimulla');//shaik: karimula
+// showMessage('Aila','vamsi');//Aila vamsi
+
+
+//Default values
+//if a parameter is not provided,then its value becomes undefined.
+
+// function showMessage(from,text) {
+//    //if text is falsy then text gets the default value
+//    text =text || 'no text given'
+// }
+
+/*
+Returning a value:
+A function can return a value back into the calling
+code as the result
+*/
+
+
+// function sum(a,b) {
+//    return a+b;
+// }
+// let result =sum(1,2);
+// console.log(result);
+
+/* 
+Naming a function:
+"get" : return a value
+"calc" : calculates something
+"create" : create something
+"check" : check something
+*/
+
+// Task Rewrite the function using '?' or '||'
+// function checkAge(age) {
+//    if (age > 18){
+//       return true;
+//    }else{
+//       return confirm('Do you have these access?');
+//    }
+// }
+
+
+
+// function checkAge(age) {
+//  return  (age >18) ? true : confirm('Did you have these access');
+// }
+
+// function checkAge(age) {
+//  return  (age >18) ||  confirm('Did you have these access');
+// }
+
+/*
+Function min(a, b)
+importance: 1
+
+Write a function min(a,b) which returns the least of two numbers a and b.
+
+For instance:
+
+min(2, 5) == 2
+min(3, -1) == -1
+min(1, 1) == 1
+*/
+
+// function min(a,b) {
+// return a<b ? a:b;
+// }
+
+// function min(a,b) {
+//    if(a<b){
+//       return a;
+//    }else{
+//       return b;
+//    }
+// }
+
+// Arrow functions
+//syntax let func =(arg1,arg2,..argN) => expression
+
+// let sum =(a,b) => a+b;
+// console.log(sum(1,2));
+
+// let double =n => n*2;
+// console.log(double(2));
+
+// let age=prompt("what is your age?",18);
+// let welcome = ( age < 18) ?
+// () => console.log('Hello'):
+// () => console.log('Greeting!');
+// welcome();
+
+//Multiple arrow function
+// let sum =(a,b) =>{
+//    let result = a+b;
+//    return result;
+// };
+// console.log( sum(1,2));
+
+
+
+// Tasks Rewrite with arrow functions
+
+// function ask(question, yes, no) {
+//   if (confirm(question)) yes()
+//   else no();
+// }
+
+// ask(
+//   "Do you agree?",
+//   function() { alert("You agreed."); },
+//   function() { alert("You canceled the execution."); }
+// );
+
+
+
+// function ask(question, yes, no) {
+//    if (confirm(question)) yes()
+//   else no();
+// }
+// ask(
+//    "Do you agree?",
+//    () => console.log('you agreed'),
+//    () => console.log('you canceled the execution') 
+// );
+
+
+// let userName = prompt("you name?","karimulla");
+// let isTeaWanted = confirm ("Do you want some tea?");
+// console.log("visitor: " +userName); //karimulla
+// console.log("Tea Wanted: "+ isTeaWanted); //true
